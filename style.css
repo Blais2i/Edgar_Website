@@ -8,6 +8,15 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Green theme gradients */
+.full-green-bg {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+}
+
+.card-bg {
+  background: rgba(255, 255, 255, 0.95);
+}
+
 /* Shiny button effect */
 .shiny-btn {
   position: relative;
@@ -30,19 +39,6 @@
   left: 100%;
 }
 
-/* Gradient backgrounds */
-.gradient-bg {
-  background: linear-gradient(135deg, #e0f7fa 0%, #bbdefb 100%);
-}
-
-.gradient-bg-2 {
-  background: linear-gradient(135deg, #fce4ec 0%, #e1bee7 100%);
-}
-
-.gradient-bg-3 {
-  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-}
-
 /* Card hover effects */
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -50,33 +46,49 @@
 
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 /* Pulse animation for profile image */
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(66, 153, 225, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(66, 153, 225, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
 .pulse-shadow {
   animation: pulse 2s infinite;
 }
 
-/* Colorful underline */
-.colorful-underline {
+/* Gold underline for expertise section */
+.gold-underline {
   position: relative;
 }
 
-.colorful-underline::after {
+.gold-underline::after {
   content: '';
   position: absolute;
   bottom: -5px;
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #4299e1, #9f7aea, #48bb78);
+  background: linear-gradient(90deg, #FFD700, #D4AF37, #FFDF00);
+  border-radius: 2px;
+}
+
+/* Green underline for other sections */
+.green-underline {
+  position: relative;
+}
+
+.green-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #c8e6c9, #a5d6a7, #81c784);
   border-radius: 2px;
 }
 
@@ -93,7 +105,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #4299e1, #9f7aea);
+  background: #c8e6c9;
   transition: width 0.3s ease;
 }
 
@@ -101,22 +113,82 @@
   width: 100%;
 }
 
-/* Colorful section dividers */
-.section-divider {
-  height: 4px;
-  background: linear-gradient(90deg, #4299e1, #9f7aea, #48bb78, #4299e1);
-  background-size: 300% 100%;
-  animation: gradientShift 3s ease infinite;
+/* Leaf decoration */
+.leaf-decoration {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 0;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.leaf-1 {
+  top: 10%;
+  left: 5%;
+  transform: rotate(15deg);
 }
 
-/* Enhanced form styling */
+.leaf-2 {
+  bottom: 15%;
+  right: 5%;
+  transform: rotate(-10deg);
+}
+
+/* Gold agriculture icons for expertise section */
+.gold-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 215, 0, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* Green agriculture icons for other sections */
+.agri-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(76, 175, 80, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* Large profile image styling */
+.large-profile-img {
+  width: 280px;
+  height: 280px;
+  border: 5px solid white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Form styling */
 .form-input:focus {
-  border-color: #9f7aea;
-  box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.2);
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Gold expertise cards */
+.gold-card {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+  border: 2px solid #FFD700;
+}
+
+.gold-card:hover {
+  border-color: #D4AF37;
+}
+
+/* Black bold text for expertise section */
+.expertise-title {
+  color: #000000;
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.expertise-description {
+  color: #000000;
+  font-weight: 600;
 }

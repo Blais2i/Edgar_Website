@@ -8,84 +8,107 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="gradient-bg-2">
+<body class="full-green-bg text-white">
 
   <!-- Navbar -->
   <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto">
-    <h1 class="text-xl font-semibold text-indigo-700">Edgard M.</h1>
-    <div class="space-x-6 text-gray-700">
-      <a href="index.html" class="nav-item hover:text-indigo-600 transition-colors duration-300">Home</a>
-      <a href="about.html" class="nav-item hover:text-indigo-600 transition-colors duration-300">About</a>
-      <a href="contact.html" class="nav-item text-indigo-600 font-medium">Contact</a>
+    <h1 class="text-xl font-semibold text-white">Edgard M.</h1>
+    <div class="space-x-6 text-white">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="contact.html" class="nav-item font-medium">Contact</a>
     </div>
   </nav>
 
-  <div class="max-w-xl mx-auto mt-16 p-6 bg-white rounded-xl shadow fade-in card-hover">
+  <div class="max-w-5xl mx-auto mt-12 p-6 fade-in">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Contact Form -->
+      <div class="lg:w-2/3 card-bg p-8 rounded-2xl shadow-lg card-hover">
+        <h2 class="text-3xl font-bold mb-6 text-green-900 green-underline inline-block">Send Me a Message</h2>
 
-    <h2 class="text-3xl font-semibold mb-6 colorful-underline inline-block">Contact Me</h2>
+        <form class="space-y-6">
+          <div>
+            <label class="block text-gray-700 mb-2 font-medium" for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" />
+          </div>
 
-    <p class="text-gray-700 mb-4">
-      Phone: <a href="tel:+250780520776" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300">+250 780 520 776</a>
-    </p>
+          <div>
+            <label class="block text-gray-700 mb-2 font-medium" for="email">Your Email</label>
+            <input type="email" id="email" placeholder="Enter your email"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" />
+          </div>
 
-    <p class="text-gray-700 mb-6">
-      Email: <a href="mailto:mugeddy97@gmail.com" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-300">mugeddy97@gmail.com</a>
-    </p>
+          <div>
+            <label class="block text-gray-700 mb-2 font-medium" for="message">Your Message</label>
+            <textarea id="message" placeholder="How can I help you?"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg h-40 form-input focus:outline-none"></textarea>
+          </div>
 
-    <h3 class="text-xl font-semibold mb-4">Send a Message</h3>
+          <button class="w-full py-4 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg hover:from-green-700 hover:to-green-800 shiny-btn transition-all duration-300 text-lg font-bold">
+            Send Message
+          </button>
+        </form>
+      </div>
 
-    <form class="space-y-4">
-      <input type="text" placeholder="Your Name"
-             class="w-full px-4 py-2 border rounded-lg form-input focus:outline-none" />
-
-      <input type="email" placeholder="Your Email"
-             class="w-full px-4 py-2 border rounded-lg form-input focus:outline-none" />
-
-      <textarea placeholder="Your Message"
-                class="w-full px-4 py-2 border rounded-lg h-32 form-input focus:outline-none"></textarea>
-
-      <button class="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 shiny-btn transition-all duration-300">
-        Send Message
-      </button>
-    </form>
-
-  </div>
-
-  <!-- Contact Info Cards -->
-  <div class="max-w-4xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-    <div class="bg-white p-6 rounded-xl shadow card-hover">
-      <div class="flex items-center mb-4">
-        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
+      <!-- Contact Info -->
+      <div class="lg:w-1/3">
+        <div class="card-bg p-8 rounded-2xl shadow-lg card-hover mb-6">
+          <h3 class="text-2xl font-bold mb-6 text-green-900 green-underline inline-block">Contact Information</h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 text-lg">Phone</h4>
+                <a href="tel:+250780520776" class="text-green-600 hover:text-green-800 transition-colors duration-300 text-lg">+250 780 520 776</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 text-lg">Email</h4>
+                <a href="mailto:mugeddy97@gmail.com" class="text-green-600 hover:text-green-800 transition-colors duration-300 text-lg">mugeddy97@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 text-lg">Location</h4>
+                <p class="text-gray-600 text-lg">Rwanda</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-gray-800">Call Me</h3>
-          <p class="text-gray-600">+250 780 520 776</p>
+        
+        <div class="card-bg p-6 rounded-2xl shadow-lg card-hover">
+          <h4 class="font-bold text-green-800 text-lg mb-4">Let's Connect</h4>
+          <p class="text-gray-600">
+            Interested in sustainable agriculture, conservation practices, or agricultural research? 
+            I'm always open to discussing new opportunities and collaborations.
+          </p>
         </div>
       </div>
     </div>
-    
-    <div class="bg-white p-6 rounded-xl shadow card-hover">
-      <div class="flex items-center mb-4">
-        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-        </div>
-        <div>
-          <h3 class="font-semibold text-gray-800">Email Me</h3>
-          <p class="text-gray-600">mugeddy97@gmail.com</p>
-        </div>
-      </div>
-    </div>
   </div>
 
-  <div class="section-divider mt-12"></div>
-
-  <footer class="text-center text-gray-600 text-sm mt-6 mb-6">
-    © 2025 Mugisha Edgard
+  <footer class="text-center text-green-200 text-sm mt-12 mb-6">
+    © 2025 Mugisha Edgard | Agronomist & Environmental Economics Researcher
   </footer>
 
 </body>

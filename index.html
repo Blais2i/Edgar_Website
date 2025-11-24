@@ -12,90 +12,113 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="gradient-bg font-sans">
+<body class="full-green-bg font-sans text-white">
+
+  <!-- Leaf decorations -->
+  <div class="leaf-decoration leaf-1">
+    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.56C7.66 18.58 8.5 17.59 9.31 16.62C10.05 15.74 10.76 14.88 11.78 14.3C15.28 12.4 19 11 22 11C17 8 17 8 17 8Z" fill="#ffffff"/>
+      <path d="M2 11C5 11 8.72 12.4 12.22 14.3C13.24 14.88 13.95 15.74 14.69 16.62C15.5 17.59 16.34 18.58 17.34 19.56L18.29 22L20.18 21.34C18.1 16.17 16 10 7 8C7 8 7 8 2 11Z" fill="#ffffff"/>
+    </svg>
+  </div>
+  
+  <div class="leaf-decoration leaf-2">
+    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.56C7.66 18.58 8.5 17.59 9.31 16.62C10.05 15.74 10.76 14.88 11.78 14.3C15.28 12.4 19 11 22 11C17 8 17 8 17 8Z" fill="#ffffff"/>
+      <path d="M2 11C5 11 8.72 12.4 12.22 14.3C13.24 14.88 13.95 15.74 14.69 16.62C15.5 17.59 16.34 18.58 17.34 19.56L18.29 22L20.18 21.34C18.1 16.17 16 10 7 8C7 8 7 8 2 11Z" fill="#ffffff"/>
+    </svg>
+  </div>
 
   <!-- Navigation -->
-  <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto">
-    <h1 class="text-xl font-semibold text-indigo-700">Edgard M.</h1>
-    <div class="space-x-6 text-gray-700">
-      <a href="index.html" class="nav-item hover:text-indigo-600 font-medium transition-colors duration-300">Home</a>
-      <a href="about.html" class="nav-item hover:text-indigo-600 transition-colors duration-300">About</a>
-      <a href="contact.html" class="nav-item hover:text-indigo-600 transition-colors duration-300">Contact</a>
+  <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto relative z-10">
+    <h1 class="text-xl font-semibold text-white">Edgard M.</h1>
+    <div class="space-x-6 text-white">
+      <a href="index.html" class="nav-item font-medium">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="contact.html" class="nav-item">Contact</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="max-w-5xl mx-auto text-center mt-20 fade-in">
+  <section class="max-w-6xl mx-auto text-center mt-12 fade-in relative z-10">
     <div class="relative inline-block">
-      <img src="profile.jpg" class="w-48 h-48 rounded-2xl mx-auto shadow-xl object-cover pulse-shadow" />
-      <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-green-400 rounded-full border-2 border-white"></div>
+      <img src="profile.jpg" class="large-profile-img rounded-full mx-auto pulse-shadow object-cover" />
+      <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-300 rounded-full border-4 border-green-700"></div>
     </div>
     
-    <h2 class="text-4xl font-semibold mt-6 text-gray-800">Welcome</h2>
-    <p class="text-gray-600 mt-3 text-lg">
-      My name is <strong class="text-indigo-700">Mugisha Edgard</strong>.  
-      I am an Agronomist and Environmental Economics researcher.  
+    <h2 class="text-5xl font-bold mt-8 text-white">Welcome</h2>
+    <p class="text-white mt-4 text-xl max-w-3xl mx-auto">
+      My name is <strong class="text-green-200">Mugisha Edgard</strong>.  
+      I am an Agronomist and Environmental Economics researcher passionate about sustainable agriculture.  
     </p>
 
-    <p class="mt-4 text-gray-700 max-w-2xl mx-auto">
-      I have contributed to land conservation, conservation agriculture, contract farming,  
-      and agricultural research to support sustainable rural development.
+    <p class="mt-6 text-green-100 max-w-3xl mx-auto text-lg">
+      With expertise in land conservation, conservation agriculture, contract farming,  
+      and agricultural research, I'm dedicated to supporting sustainable rural development.
     </p>
 
-    <div class="mt-8 space-x-4">
+    <div class="mt-10 space-x-4">
       <a href="about.html"
-         class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow hover:from-indigo-700 hover:to-purple-700 shiny-btn transition-all duration-300">
+         class="px-8 py-4 bg-white text-green-800 rounded-lg shadow-lg hover:bg-green-50 shiny-btn transition-all duration-300 text-lg font-bold">
         Learn More About Me
       </a>
 
       <a href="contact.html"
-         class="px-6 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-lg shadow hover:from-green-600 hover:to-teal-600 shiny-btn transition-all duration-300">
-        Get in Touch
+         class="px-8 py-4 bg-green-600 text-white rounded-lg shadow-lg hover:bg-green-700 shiny-btn transition-all duration-300 text-lg font-bold">
+        Get In Touch
       </a>
     </div>
   </section>
 
-  <!-- Skills Preview -->
-  <section class="max-w-5xl mx-auto mt-24 fade-in">
-    <h2 class="text-3xl font-semibold text-center mb-10 text-gray-800 colorful-underline inline-block">Areas of Expertise</h2>
+  <!-- Skills Preview - GOLD VERSION with BLACK BOLD TEXT -->
+  <section class="max-w-6xl mx-auto mt-20 fade-in relative z-10">
+    <h2 class="text-4xl font-bold text-center mb-12 text-white gold-underline inline-block">Areas of Expertise</h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-      <div class="bg-white p-6 rounded-xl shadow card-hover gradient-bg-2">
-        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+      <div class="gold-card p-6 rounded-2xl shadow-lg card-hover">
+        <div class="gold-icon mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-indigo-700">Agricultural Economics</h3>
-        <p class="mt-2 text-gray-600">Economic analysis of agricultural systems and policies.</p>
+        <h3 class="expertise-title text-center">Agricultural Economics</h3>
+        <p class="mt-3 expertise-description text-center">Economic analysis of agricultural systems and sustainable farming policies.</p>
       </div>
       
-      <div class="bg-white p-6 rounded-xl shadow card-hover gradient-bg-3">
-        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="gold-card p-6 rounded-2xl shadow-lg card-hover">
+        <div class="gold-icon mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-green-700">Conservation Agriculture</h3>
-        <p class="mt-2 text-gray-600">Sustainable farming practices for environmental protection.</p>
+        <h3 class="expertise-title text-center">Conservation Agriculture</h3>
+        <p class="mt-3 expertise-description text-center">Sustainable farming practices for environmental protection and soil health.</p>
       </div>
       
-      <div class="bg-white p-6 rounded-xl shadow card-hover gradient-bg">
-        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="gold-card p-6 rounded-2xl shadow-lg card-hover">
+        <div class="gold-icon mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-blue-700">Land Conservation</h3>
-        <p class="mt-2 text-gray-600">Protecting and restoring land resources for future generations.</p>
+        <h3 class="expertise-title text-center">Land Conservation</h3>
+        <p class="mt-3 expertise-description text-center">Protecting and restoring land resources for sustainable agriculture.</p>
+      </div>
+      
+      <div class="gold-card p-6 rounded-2xl shadow-lg card-hover">
+        <div class="gold-icon mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="expertise-title text-center">Environmental Economics & Natural Resource Management</h3>
+        <p class="mt-3 expertise-description text-center">Sustainable management of natural resources through economic principles.</p>
       </div>
     </div>
   </section>
 
-  <div class="section-divider mt-24"></div>
-
-  <footer class="text-center text-gray-600 text-sm mt-12 mb-6">
-    © 2025 Mugisha Edgard
+  <footer class="text-center text-green-200 text-sm mt-24 mb-6">
+    © 2025 Mugisha Edgard | Agronomist & Environmental Economics Researcher
   </footer>
 
 </body>
