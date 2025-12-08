@@ -8,20 +8,53 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Green theme gradients */
+/* NEW: Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* NEW: Glowing text effect */
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+}
+
+/* Green theme gradients with enhanced depth */
 .full-green-bg {
-  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+  background: linear-gradient(135deg, #1a472a 0%, #2e7d32 40%, #43a047 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* NEW: Animated background pattern */
+.full-green-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
 }
 
 .card-bg {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Shiny button effect */
+/* Enhanced Shiny button effect with rainbow on hover */
 .shiny-btn {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .shiny-btn::before {
@@ -31,38 +64,62 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.7s;
+  z-index: 1;
 }
 
 .shiny-btn:hover::before {
   left: 100%;
 }
 
-/* Card hover effects */
+.shiny-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Card hover effects with 3D rotation */
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease,
+              border-color 0.3s ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(-10px) perspective(1000px) rotateX(2deg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-/* Pulse animation for profile image */
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+/* Enhanced Pulse animation for profile image */
+@keyframes enhancedPulse {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7),
+                0 0 0 0 rgba(76, 175, 80, 0.4);
+  }
+  70% { 
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0),
+                0 0 0 30px rgba(76, 175, 80, 0);
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0),
+                0 0 0 0 rgba(76, 175, 80, 0);
+  }
 }
 
 .pulse-shadow {
-  animation: pulse 2s infinite;
+  animation: enhancedPulse 2s infinite;
+  position: relative;
 }
 
-/* Gold underline for expertise section */
+/* NEW: Profile image floating effect */
+.large-profile-img {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Enhanced Gold underline with shimmer */
 .gold-underline {
   position: relative;
+  display: inline-block;
 }
 
 .gold-underline::after {
@@ -71,14 +128,27 @@
   bottom: -5px;
   left: 0;
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #FFD700, #D4AF37, #FFDF00);
-  border-radius: 2px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    #FFD700, 
+    #FFEC8B, 
+    #D4AF37, 
+    #FFDF00,
+    #FFD700);
+  border-radius: 4px;
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
-/* Green underline for other sections */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Enhanced Green underline */
 .green-underline {
   position: relative;
+  display: inline-block;
 }
 
 .green-underline::after {
@@ -87,15 +157,23 @@
   bottom: -5px;
   left: 0;
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #c8e6c9, #a5d6a7, #81c784);
-  border-radius: 2px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    #a5d6a7, 
+    #81c784, 
+    #4caf50, 
+    #388e3c,
+    #a5d6a7);
+  border-radius: 4px;
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite reverse;
 }
 
-/* Enhanced navigation */
+/* Enhanced navigation with glow effect */
 .nav-item {
   position: relative;
   padding-bottom: 5px;
+  transition: all 0.3s ease;
 }
 
 .nav-item::after {
@@ -104,91 +182,292 @@
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: #c8e6c9;
-  transition: width 0.3s ease;
+  height: 3px;
+  background: linear-gradient(90deg, #a5d6a7, #4caf50);
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-item:hover {
+  text-shadow: 0 0 10px rgba(165, 214, 167, 0.7);
 }
 
 .nav-item:hover::after {
   width: 100%;
 }
 
-/* Leaf decoration */
+/* Enhanced Leaf decoration with animation */
 .leaf-decoration {
   position: absolute;
-  opacity: 0.1;
+  opacity: 0.15;
   z-index: 0;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  animation: float 8s ease-in-out infinite;
 }
 
 .leaf-1 {
   top: 10%;
   left: 5%;
   transform: rotate(15deg);
+  animation-delay: 0s;
 }
 
 .leaf-2 {
   bottom: 15%;
   right: 5%;
   transform: rotate(-10deg);
+  animation-delay: 1s;
 }
 
-/* Gold agriculture icons for expertise section */
+/* NEW: More leaf decorations */
+.leaf-3 {
+  top: 30%;
+  right: 10%;
+  transform: rotate(25deg);
+  width: 80px;
+  height: 80px;
+  opacity: 0.1;
+  animation-delay: 2s;
+}
+
+.leaf-4 {
+  bottom: 30%;
+  left: 10%;
+  transform: rotate(-15deg);
+  width: 60px;
+  height: 60px;
+  opacity: 0.1;
+  animation-delay: 3s;
+}
+
+/* Enhanced Gold agriculture icons */
 .gold-icon {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 215, 0, 0.15);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(212, 175, 55, 0.3));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
 }
 
-/* Green agriculture icons for other sections */
-.agri-icon {
-  width: 60px;
-  height: 60px;
-  background: rgba(76, 175, 80, 0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
+.gold-card:hover .gold-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(212, 175, 55, 0.4));
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 
-/* Large profile image styling */
+/* Enhanced Large profile image styling */
 .large-profile-img {
   width: 280px;
   height: 280px;
-  border: 5px solid white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border: 8px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  position: relative;
 }
 
-/* Form styling */
+/* NEW: Profile image decorative ring */
+.large-profile-img::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced Form styling */
+.form-input {
+  transition: all 0.3s ease;
+  border: 2px solid #e0e0e0;
+}
+
 .form-input:focus {
   border-color: #4caf50;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+  box-shadow: 
+    0 0 0 4px rgba(76, 175, 80, 0.1),
+    0 5px 15px rgba(76, 175, 80, 0.2);
+  transform: translateY(-2px);
 }
 
-/* Gold expertise cards */
+/* Enhanced Gold expertise cards with gradient border */
 .gold-card {
   background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
-  border: 2px solid #FFD700;
+  position: relative;
+  border: none;
+  overflow: hidden;
 }
 
-.gold-card:hover {
-  border-color: #D4AF37;
+.gold-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #FFD700, #D4AF37, #FFDF00, #FFD700) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  border-radius: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
-/* Black bold text for expertise section */
+.gold-card:hover::before {
+  opacity: 1;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Black bold text for expertise section with subtle shadow */
 .expertise-title {
   color: #000000;
   font-weight: 800;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .expertise-description {
-  color: #000000;
+  color: #333333;
   font-weight: 600;
+  line-height: 1.6;
+}
+
+/* NEW: Progress bar animation for skills */
+.skill-progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  border-radius: 4px;
+  animation: progressFill 1.5s ease-out forwards;
+  transform-origin: left;
+}
+
+@keyframes progressFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* NEW: Scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* NEW: Floating action button */
+.floating-action {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* NEW: Page loading animation */
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a472a 0%, #2e7d32 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFD700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .leaf-decoration {
+    display: none;
+  }
+  
+  .gold-underline::after,
+  .green-underline::after {
+    height: 3px;
+  }
+  
+  .large-profile-img {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .gold-card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* NEW: Text highlight effect */
+.highlight-text {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-text::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  right: -5px;
+  bottom: 0;
+  background: rgba(255, 215, 0, 0.3);
+  transform: skewX(-15deg);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.highlight-text:hover::before {
+  opacity: 1;
 }
